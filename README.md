@@ -26,33 +26,34 @@ Sebelum menjalankan aplikasi, pastikan perangkat keras dan lingkungan perangkat 
 
 ### 1. Kloning Repositori
 Unduh atau kloning repositori ini ke dalam penyimpanan lokal perangkat:
-git clone [https://github.com/firgiansyahw/ids_cnn_lstm.git](https://github.com/firgiansyahw/ids_cnn_lstm.git)
-cd ids_cnn_lstm
 
-2. Pemasangan Pustaka Dependensi
+    git clone [https://github.com/firgiansyahw/ids_cnn_lstm.git](https://github.com/firgiansyahw/ids_cnn_lstm.git)
+
+    cd ids_cnn_lstm
+
+### 2. Pemasangan Pustaka Dependensi
 Buka terminal pilihan Anda (Command Prompt / PowerShell) pada folder utama proyek, lalu jalankan perintah berikut untuk menginstal seluruh pustaka yang tertera pada berkas requirements.txt:
-pip install -r requirements.txt
 
-4. Konfigurasi dan Penempatan Dataset
+    pip install -r requirements.txt
+
+### 3. Konfigurasi dan Penempatan Dataset
 Buat sebuah direktori baru bernama Dataset/ di dalam folder utama proyek, kemudian susun struktur folder internalnya seperti di bawah ini untuk meletakkan 8 berkas CSV asli dari dataset CICIDS2017:  
 
-Plaintext
-Dataset/
-
-└── CICIDS2017/
-    
-    ├── Monday-WorkingHours.pcap_ISCX.csv
-    ├── Tuesday-WorkingHours.pcap_ISCX.csv
-    ├── Wednesday-workingHours.pcap_ISCX.csv
-    ├── Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
-    ├── Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv
-    ├── Friday-WorkingHours-Morning.pcap_ISCX.csv
-    ├── Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
-    └── Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
-    
-4. Mengeksekusi Aplikasi
-Untuk menjalankan aplikasi secara langsung di lingkungan Windows, pengguna dapat melakukan klik ganda (double-click) pada berkas pintasan:
-➡️ jalankan_aplikasi.bat
+    Struktur Folder:
+    Dataset/
+    └── CICIDS2017/
+        ├── Monday-WorkingHours.pcap_ISCX.csv
+        ├── Tuesday-WorkingHours.pcap_ISCX.csv
+        ├── Wednesday-workingHours.pcap_ISCX.csv
+        ├── Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
+        ├── Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv
+        ├── Friday-WorkingHours-Morning.pcap_ISCX.csv
+        ├── Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
+        └── Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
+        
+### 4. Mengeksekusi Aplikasi
+Untuk menjalankan aplikasi secara langsung di lingkungan Windows, pengguna dapat melakukan klik ganda (double-click) pada file "jalankan_aplikasi.bat"
 
 Sebagai alternatif, aplikasi juga dapat dijalankan secara manual melalui perintah terminal berikut:
-python app_tkinter.py
+
+    python app_tkinter.py
