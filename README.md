@@ -18,7 +18,7 @@ Repositori ini berisi implementasi Sistem Deteksi Intrusi (IDS) berbasis pembela
 Sebelum menjalankan aplikasi, pastikan perangkat keras dan lingkungan perangkat lunak telah memenuhi spesifikasi berikut:
 *   **Sistem Operasi**: Windows 10 / 11.
 *   **Versi Python**: Python 3.9 s.d 3.11 (Direkomendasikan).
-*   **Dataset**: Berkas CSV asli dari official dataset **CICIDS2017**.
+*   **Dataset**: Berkas CSV asli dari official dataset **CICIDS2017** melalui Kaggle. Link: https://www.kaggle.com/datasets/chethuhn/network-intrusion-dataset
 
 ---
 
