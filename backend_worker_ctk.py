@@ -1,45 +1,11 @@
-# -*- coding: utf-8 -*-
-# CATATAN REVISI LOGGING:
-# Versi ini menambahkan automatic file logging.
-# UI tetap menampilkan process log ringkas melalui self._log(),
-# sedangkan setiap log juga otomatis tersimpan ke:
-# outputs/logs/current_run_full_log.txt
-# outputs/logs/runs/<run_id>_full_log.txt
-# outputs/logs/runs/<run_id>_phaseX_log.txt
-#
-# Detail epoch CNN-LSTM disimpan ke file log tanpa memenuhi UI.
 
-# CATATAN REVISI:
-# Versi ini menghapus Phase 6 agar fokus sidang tetap pada main pipeline:
-# Phase 1 Data Loading sampai Phase 5 Evaluation.
-# CNN-LSTM tetap menggunakan satu model final: outputs/phase4/models/cnn_lstm_model.h5
-
-# CATATAN REVISI UNTUK SIDANG:
-# Pada versi ini, bagian CNN-LSTM di Phase 4 disederhanakan menjadi SATU model final.
-# Arsitektur yang dipakai adalah konfigurasi final CNN-LSTM.
-# Output model deep learning sekarang hanya: outputs/phase4/models/cnn_lstm_model.h5
-
-"""
-backend_worker_ctk.py
-Digunakan oleh app_tkinter.py (CustomTkinter).
-
-Sinyal diganti dengan objek _Signal sederhana yang punya method .emit().
-WorkerAdapter di app_tkinter.py akan meng-override objek ini dengan callback UI.
-"""
-
-
-# =============================================================================
-# CATATAN SIDANG
-# =============================================================================
-# File ini berperan sebagai BACKEND WORKER untuk aplikasi IDS berbasis Tkinter.
-# Artinya, file ini menjalankan proses utama machine learning secara bertahap:
 # Phase 1: data loading
 # Phase 2: data cleaning/preprocessing
 # Phase 3: feature engineering, PCA, SMOTE
 # Phase 4: model training
 # Phase 5: model evaluation
 #
-# File ini dibuat agar pipeline yang sebelumnya berjalan linear di script
+# File ini dibuat agar pipeline berjalan linear di script
 # eksperimen ids_cnn_lstm.py dapat dijalankan per fase dari tampilan UI.
 #
 # Prinsip sederhananya:
@@ -79,9 +45,7 @@ DATASET_FILES = [
     "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
 ]
 
-
-# ATTACK_MAP digunakan untuk menyederhanakan label asli dataset menjadi
-# kelas umum yang dipakai oleh model, misalnya:
+# ATTACK_MAP digunakan untuk menyederhanakan label asli dataset menjadi kelas umum yang dipakai oleh model, misalnya:
 # - DoS Hulk, DoS GoldenEye, DoS Slowloris -> DoS
 # - FTP-Patator, SSH-Patator -> Brute Force
 # - beberapa varian Web Attack -> Web Attack
@@ -109,14 +73,12 @@ ATTACK_MAP = {
 }
 
 
-
 # ── Dummy signal (akan di-override oleh WorkerAdapter) ───────────────────────
 # _Signal adalah pengganti sederhana dari pyqtSignal.
 # Karena aplikasi memakai Tkinter, sinyal ini nantinya diganti oleh callback
 # dari app_tkinter.py agar backend bisa mengirim log, progress, error, dan status selesai.
 class _Signal:
     def emit(self, *args): pass
-
 
 # ── Helper I/O ────────────────────────────────────────────────────────────────
 # Fungsi-fungsi helper ini dipakai untuk menyimpan output:
@@ -145,7 +107,6 @@ def _save_pickle(obj, filename, phase):
 def _load_pickle(filename, phase):
     with open(os.path.join(OUTPUT_DIR, f"phase{phase}", f"{filename}.pkl"), 'rb') as f:
         return pickle.load(f)
-
 
 # ==============================================================================
 # WORKER CLASS (tanpa QObject)
