@@ -38,6 +38,7 @@ Buat sebuah direktori baru bernama Dataset/ di dalam folder utama proyek, kemudi
 
 Plaintext
 Dataset/
+
 └── CICIDS2017/
     ├── Monday-WorkingHours.pcap_ISCX.csv
     ├── Tuesday-WorkingHours.pcap_ISCX.csv
