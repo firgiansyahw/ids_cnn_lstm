@@ -1,0 +1,11 @@
+customtkinter
+pillow
+numpy
+pandas
+pyarrow
+matplotlib
+seaborn
+missingno
+scikit-learn
+imbalanced-learn
+tensorflow

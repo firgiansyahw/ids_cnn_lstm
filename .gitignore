@@ -1,0 +1,24 @@
+# Python bytecode cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Lingkungan virtual lokal (jika ada)
+.venv/
+venv/
+env/
+
+# Konfigurasi Editor/IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# DATASET (Diubah sesuai dengan nama folder asli lu)
+CICIDS2017/
+
+# OUTPUT GENERATED (Akan dibuat otomatis oleh sistem saat di-run)
+outputs/
