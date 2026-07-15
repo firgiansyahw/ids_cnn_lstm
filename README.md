@@ -40,6 +40,7 @@ Plaintext
 Dataset/
 
 └── CICIDS2017/
+    
     ├── Monday-WorkingHours.pcap_ISCX.csv
     ├── Tuesday-WorkingHours.pcap_ISCX.csv
     ├── Wednesday-workingHours.pcap_ISCX.csv
